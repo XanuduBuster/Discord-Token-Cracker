@@ -1,4 +1,4 @@
-# Discord Token exploit
+# Discord Token Generator
 
 Generator random characters and check
 
