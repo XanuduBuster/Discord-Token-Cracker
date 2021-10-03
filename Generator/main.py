@@ -35,5 +35,10 @@ while userid == userid:
             break
         else:
             print(Fore.RED + '[-] INVALID' + ' ' + token)
+            time.sleep(1)
+
+        if login.status_code == 429:
+                print("You get rate limited, waiting 65 seconds")
+                time.sleep(65)
     finally:
         print("")
