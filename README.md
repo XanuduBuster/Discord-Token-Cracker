@@ -8,6 +8,6 @@
 
 
 ## *You can help me complete the proxy part by fork this project and make that part (feel free to give credit :>)
-## Stars this repository pls :)
+## Also stars this repository pls :)
 
 # WARNING: This project are for educational purposes only, DO NOT use this to steal other user account!
