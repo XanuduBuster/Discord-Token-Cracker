@@ -40,5 +40,5 @@ while userid == userid:
         if login.status_code == 429:
           print(Fore.YELLOW + f"[*] You get rate limited!")
     finally:
-        print(" ")
+        print("")
 input()
