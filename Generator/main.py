@@ -6,8 +6,6 @@ import requests
 from colorama import *
 import time
 
-p =  open("proxy/socks4.txt", "r")
-
 userid = base64.b64encode((input("UserID: ")).encode("ascii"))
 userid = str(userid)[2:-1]
 print("WARNING: Educational purposes only!")
@@ -40,9 +38,7 @@ while userid == userid:
             print(Fore.RED + '[-] INVALID' + ' ' + token)
 
         if login.status_code == 429:
-          rp = random.choice(list(p.read().split('\n')))
-          print(Fore.YELLOW + f"[*] You get rate limited, connected to proxy!")
-          login = requests.get(url, headers=headers, proxies={'socks4':"socks4://"+rp})
+          print(Fore.YELLOW + f"[*] You get rate limited!")
     finally:
-        print("")
+        print(" ")
 input()
