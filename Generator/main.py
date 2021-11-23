@@ -5,6 +5,7 @@ import string
 import requests
 from colorama import *
 import time
+#ndbiaw start
 f = open("./proxy/socks4.txt",'wb')
 try:
  r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=socks4&country=all")
@@ -40,12 +41,13 @@ try:#credit to All3xJ
    proxies=proxies + proxy[0] + ":" + proxy[1] + "\n"
   except:
    pass
- out_file = open("socks4.txt","a")
+ out_file = open("./proxy/socks4.txt","a")
  out_file.write(proxies)
  out_file.close()
 except:
  pass
 print("> Proxy List Downloaded as socks4.txt")
+#ndbiaw end
 userid = base64.b64encode((input("UserID: ")).encode("ascii"))
 userid = str(userid)[2:-1]
 print("WARNING: Educational purposes only!")
