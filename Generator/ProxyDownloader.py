@@ -43,4 +43,5 @@ except:
  pass
 print("> Proxy List Downloaded as socks4.txt")
 #ndbiaw end
-#####
+input("Press Anykey to exit...")
+exit()
