@@ -6,8 +6,8 @@
 ## HOW TO USE:
 #### 1. Paste any user id and then it will generator and check.
 
-
-## Proxy list generator by [ndbiaw](https://github.com/ndbiaw). He will be happy if you follow him.
-## Also stars this repository pls :)
+# Credit:
+### Proxy list generator by [ndbiaw](https://github.com/ndbiaw). He will be happy if you follow him.
 
 # WARNING: This project are for educational purposes only, DO NOT use this to steal other user account!
+## Also stars this repository pls :)
