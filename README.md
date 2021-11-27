@@ -7,7 +7,7 @@
 #### 1. Paste any user id and then it will generator and check.
 
 
-## *You can help me complete the proxy part by fork this project and make that part (feel free to give credit :>)
+## Proxy list generator by [ndbiaw](https://github.com/ndbiaw). He will be happy if you follow him.
 ## Also stars this repository pls :)
 
 # WARNING: This project are for educational purposes only, DO NOT use this to steal other user account!
