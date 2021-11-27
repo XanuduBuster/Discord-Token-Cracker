@@ -1,4 +1,3 @@
-import os
 import requests
 #ndbiaw start
 f = open("./proxy/socks4.txt",'wb')
