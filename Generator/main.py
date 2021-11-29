@@ -29,7 +29,7 @@ while userid == userid:
 
     token = userid + '.' + timest(chars=ts) + '.' + HMAC(chars=ts)
     
-    proxy = {'socks4': 'socks4://'+random.choice(list(proxies))}
+    proxy = {'https': 'socks4://'+random.choice(list(proxies))}
 
     headers={
     'Authorization': token
