@@ -5,7 +5,7 @@
 
 ## HOW TO USE:
 #### 1. Run proxy downloader if you see socks4.txt is empty
-#### 2. Paste any user id and then it will generator and check.
+#### 2. Run main.py and paste any user id and then it will generator and check.
 
 # Credit:
 ### Proxy list generator by [ndbiaw](https://github.com/ndbiaw). He will be happy if you follow him.
