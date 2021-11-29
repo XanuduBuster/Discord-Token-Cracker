@@ -3,6 +3,7 @@ import os
 import random
 import string
 import requests
+import colorama
 from colorama import *
 import time
 userid = base64.b64encode((input("UserID: ")).encode("ascii"))
