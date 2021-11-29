@@ -35,7 +35,7 @@ while userid == userid:
     'Authorization': token
     }
     url = 'https://discordapp.com/api/v9/auth/login'
-    login = requests.get(url, headers=headers, proxies=proxy)
+    login = requests.get(url, headers=headers)
     try:
         if login.status_code == 200:
             print(Fore.GREEN + '[+] VALID' + ' ' + token)
