@@ -4,7 +4,8 @@
 #### * This have meet the requirements of discord token (https://github.com/hxr404/Discord-Console-hacks#discord-token-syntax)
 
 ## HOW TO USE:
-#### 1. Paste any user id and then it will generator and check.
+#### 1. Run proxy downloader if you see socks4.txt is empty
+#### 2. Paste any user id and then it will generator and check.
 
 # Credit:
 ### Proxy list generator by [ndbiaw](https://github.com/ndbiaw). He will be happy if you follow him.
