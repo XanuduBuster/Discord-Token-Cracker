@@ -42,8 +42,10 @@ while userid == userid:
             f = open('done.txt', "a+")
             f.write(f'{token}\n')
             break
-        else:
-            print(Fore.RED + '[-] INVALID' + ' ' + token)
+        elif login.status_code == 429:
+            return
+            else:
+                print(Fore.RED + '[-] INVALID' + ' ' + token)
     finally:
         print("")
 input()
