@@ -5,7 +5,7 @@
 
 ## HOW TO USE:
 #### 1. Run proxy downloader if you see socks4.txt is empty
-#### 2. Run main.py and paste any user id and then it will generator and check.
+#### 2. Run run.bat file and paste any user id and then it will generator and check.
 
 #### ![image](https://i.ibb.co/87Mb9nY/image.png "Example picture when you run program.")
 
