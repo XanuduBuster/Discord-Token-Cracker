@@ -46,7 +46,7 @@ while userid == userid:
     }
     url = 'https://discordapp.com/api/v9/auth/login'
     try:
-        login = requests.get(url, headers=headers, proxies=proxy_form, timeout=3000)
+        login = requests.get(url, headers=headers, proxies=proxy_form, timeout=6000)
         if login.status_code == 200:
             print(Fore.GREEN + '[+] VALID' + ' ' + token)
             f = open('done.txt', "a+")
