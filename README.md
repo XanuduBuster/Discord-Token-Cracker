@@ -9,6 +9,10 @@
 
 #### ![image](https://i.ibb.co/87Mb9nY/image.png "Example picture when you run program.")
 
+## FAQ:
+#### Q: Why its run so slowwwwwwwww
+#### A: Cuz ur internet is slow or too many bad proxy
+
 # Credit:
 ### Proxy list generator by [ndbiaw](https://github.com/ndbiaw). He will be happy if you follow him.
 
