@@ -14,7 +14,7 @@
 #### A: Cuz ur internet is slow or too many bad proxy
 
 # Credit:
-### Proxy list generator by [ndbiaw](https://github.com/ndbiaw). He will be happy if you follow him.
+### Proxy list generator by [ndbiaw](https://github.com/ndbiaw).
 
 # WARNING: This project are for educational purposes only, DO NOT use this to steal other user account!
 ## Also stars this repository pls :)
