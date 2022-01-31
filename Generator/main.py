@@ -20,9 +20,11 @@ try:
     if os.stat("config.json").st_size == 0:
         with open("config.json", "w") as f:
             json.dump(config, f, indent=2)
+        print("Successfully Wrote the config!")
 except:
     with open("config.json", "a+") as f:
         json.dump(config, f, indent=2)
+    print("Successfully Wrote the config!")
 
 
 with open("config.json", "r") as config_file:
@@ -33,11 +35,6 @@ invaild = 0
 total_proxy = 0
 bad_proxy = 0
 
-"""
-mode = input("Cracker Mode | User/Bot | 0 / 1: ")
-rp = bool(input("Auto Remove Proxy? True/False: "))
-ptimeout = input("Proxy Timeout (blank = default): ")
-"""
 userid = base64.b64encode((input("User / Bot ID: ")).encode("ascii"))
 userid = str(userid)[2:-1]
 print("WARNING: Educational purposes only!")
