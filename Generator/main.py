@@ -14,7 +14,7 @@ with open("config.json", "r") as f:
     data = f.read()
     print(data)
 """
-config = {"Cracker_Mode": "user","Remove_Bad_Proxy": "false","proxy_timeout": "6000"}
+config = {"cracker_mode": "user","remove_bad_proxy": False,"proxy_timeout": "6000"}
 
 try:
     if os.stat("config.json").st_size == 0:
@@ -58,9 +58,9 @@ while userid == userid:
 
     token = userid + '.' + timest(chars=ts) + '.' + HMAC(chars=ts)
 
-    if data["cracker_mode"] == "user":
+    if data["cracker_mode"].casefold() == "user".casefold():
         checkerheaders = {'Authorization': token}
-    elif data["cracker_mode"] == "bot":
+    elif data["cracker_mode"].casefold() == "bot".casefold():
         checkerheaders = {'Authorization': f'Bot {token}'}
     else:
         print(Fore.RED + "Invaild Mode!")
