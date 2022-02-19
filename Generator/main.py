@@ -48,10 +48,17 @@ with open(data["proxy_file_path"], "r") as file:
 
 ts = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_"
 
+def setTerminalTitle():
+    while True:
+        set_title(f"Token Cracker - Vaild: {vaild} | Invaild: {invaild} | Total Proxies: {total_proxy} | Bad Proxy: {bad_proxy}")
+
 def cracker():
+    global bad_proxy
+    global vaild
+    global invaild
+    global total_proxy
     while userid == userid:
         total_proxy = len(list(proxies))
-        set_title(f"Token Cracker - Vaild: {vaild} | Invaild: {invaild} | Total Proxies: {total_proxy} | Bad Proxy: {bad_proxy}")
         def HMAC(chars = string.ascii_uppercase + string.digits, N=27):
             return ''.join(random.choice(chars) for _ in range(N))
 
@@ -87,5 +94,7 @@ def cracker():
             bad_proxy += 1
             pass
 
+
+threading.Thread(target=setTerminalTitle).start()
 for i in range(0, int(data["threads"])+1):
     threading.Thread(target=cracker).start()
