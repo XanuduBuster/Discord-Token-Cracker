@@ -18,5 +18,5 @@
 # Credit:
 ### Proxy list generator by [ndbiaw](https://github.com/ndbiaw).
 
-# WARNING: This project are for educational purposes only, DO NOT use this to steal other user account!
+# WARNING: This project are for educational purposes only, I don't recommend you to use it to stole people's account!
 ## Also stars this repository pls :)
