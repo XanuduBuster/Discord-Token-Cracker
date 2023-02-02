@@ -1,7 +1,6 @@
 # Discord Token Generator
 
 ### Generator random characters and check
-#### * This have meet the requirements of discord token (https://github.com/hxr404/Discord-Console-hacks#discord-token-syntax)
 
 ## HOW TO USE:
 #### 1. Run proxy downloader if you see socks4.txt is empty
