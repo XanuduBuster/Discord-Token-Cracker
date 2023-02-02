@@ -19,4 +19,3 @@
 ### Proxy list generator by [ndbiaw](https://github.com/ndbiaw).
 
 # WARNING: This project are for educational purposes only, I don't recommend you to use it to steal people's account! (totally impossible lol)
-## Also stars this repository pls :)
